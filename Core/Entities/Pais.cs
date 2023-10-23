@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+
+public class Pais : BaseEntityInt
 {
-    public class Pais
-    {
-        
-    }
+    public string Nombre { get; set; }
+    public ICollection<Pais> Paises { get; set; }
 }

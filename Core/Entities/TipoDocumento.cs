@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+
+public class TipoDocumento : BaseEntityInt
 {
-    public class TipoDocumento
-    {
-        
-    }
+    public string Nombre { get; set; }
 }

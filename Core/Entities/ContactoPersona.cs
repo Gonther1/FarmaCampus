@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+
+public class ContactoPersona : BaseEntityInt
 {
-    public class ContactoPersona
-    {
-        
-    }
+    public int IdTipoContacto { get; set; }
+    public TipoContacto TiposContactos { get; set; }
 }

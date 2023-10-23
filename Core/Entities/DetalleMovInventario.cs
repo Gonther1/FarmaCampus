@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+
+public class DetalleMovInventario : BaseEntityInt
 {
-    public class DetalleMovInventario
-    {
-        
-    }
+    public short Cantidad { get; set; }
+    public double Precio { get; set; }
+    public string IdInventario { get; set; }
+    public Inventario Inventarios { get; set; }
+    public string IdMovInv { get; set; }
+    public MovimientoInventario MovimientosInventarios { get; set; }
 }

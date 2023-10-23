@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+
+public class Departamento : BaseEntityInt
 {
-    public class Departamento
-    {
-        
-    }
+    public string Nombre { get; set; }
+    public ICollection<Ciudad> Ciudades { get; set; }
+    public int IdPaisFk { get; set; }
+    public Pais Paises { get; set; }
 }
