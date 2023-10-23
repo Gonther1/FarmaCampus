@@ -8,4 +8,5 @@ namespace Core.Entities;
 public class Presentacion : BaseEntityInt
 {
     public string Nombre { get; set; }
+    public ICollection<Inventario> Inventarios { get; set; }
 }

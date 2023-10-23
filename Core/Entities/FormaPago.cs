@@ -8,4 +8,5 @@ namespace Core.Entities;
 public class FormaPago : BaseEntityInt
 {
     public string Nombre { get; set; }
+    public ICollection<MovimientoInventario> MovimientosInventarios { get; set; }
 }

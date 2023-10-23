@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-public class DetalleMovInventario : BaseEntityInt
+public class DetalleMovInventario 
 {
     public short Cantidad { get; set; }
     public double Precio { get; set; }
@@ -13,4 +13,5 @@ public class DetalleMovInventario : BaseEntityInt
     public Inventario Inventarios { get; set; }
     public string IdMovInv { get; set; }
     public MovimientoInventario MovimientosInventarios { get; set; }
+    
 }

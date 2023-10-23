@@ -9,7 +9,6 @@ public class Persona : BaseEntityStr
 {
     public string Nombre { get; set; }
     public DateTime FechaRegistro { get; set; }
-    public int IdDocumento { get; set; }
     public int IdTipoDocumento { get; set; }
     public TipoDocumento TiposDocumentos { get; set; }
     public int IdRolPersona { get; set; }

@@ -12,7 +12,9 @@ public class Inventario : BaseEntityStr
     public short Stock { get; set; }
     public short StockMin { get; set; }
     public short StockMax { get; set; }
-    public string CodProducto { get; set; }
     public int IdPresentacion { get; set; }
     public Presentacion Presentaciones { get; set; }
+    public string CodProducto { get; set; }
+    public Producto Productos { get; set; }
+    public ICollection<DetalleMovInventario> DetallesMovInventarios { get; set; }
 }

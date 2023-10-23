@@ -8,4 +8,5 @@ namespace Core.Entities;
 public class RolPersona : BaseEntityInt
 {
     public string Nombre { get; set; }
+    public ICollection<Persona> Personas { get; set; }
 }

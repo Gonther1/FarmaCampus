@@ -8,5 +8,5 @@ namespace Core.Entities;
 public class Pais : BaseEntityInt
 {
     public string Nombre { get; set; }
-    public ICollection<Pais> Paises { get; set; }
+    public ICollection<Departamento> Departamentos { get; set; }
 }
