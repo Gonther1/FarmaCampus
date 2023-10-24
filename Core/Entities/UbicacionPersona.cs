@@ -5,19 +5,19 @@ using System.Threading.Tasks;
 
 namespace Core.Entities;
 
-public class UbicacionPersona
+public class UbicacionPersona : BaseEntityInt
 {
     public int IdDireccion { get; set; }
     public string TipoDeVia { get; set; }
-    public short NumeroPri { get; set; }
-    public short NumeroSec { get; set; }
-    public short NumeroTer { get; set; }
-    public char LetraPri { get; set; }
-    public char LetraSec { get; set; }
-    public char LetraTer { get; set; }
+    public int NumeroPri { get; set; }
+    public int NumeroSec { get; set; }
+    public int NumeroTer { get; set; }
+    public string LetraPri { get; set; }
+    public string LetraSec { get; set; }
+    public string LetraTer { get; set; }
     public string Bis { get; set; }
-    public char CardinalPri { get; set; }
-    public char CardinalSec { get; set; }
+    public string CardinalPri { get; set; }
+    public string CardinalSec { get; set; }
     public string Complemento { get; set; }
     public string IdPersona { get; set; }
     public Persona Personas { get; set; }

@@ -14,23 +14,26 @@ public class InventarioConfiguration : IEntityTypeConfiguration<Inventario>
     {
         builder.ToTable("inventario");
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id);
+        builder.Property(e => e.Id)
+        .HasMaxLength(10);
 
         builder.Property(p => p.Nombre)
         .IsRequired()
         .HasMaxLength(50);
 
         builder.Property(p => p.Precio)
-        .IsRequired().HasColumnType("double");
+        .HasColumnType("double");
 
         builder.Property(p => p.Stock)
-        .IsRequired().HasColumnType("short");
+        .HasColumnType("int");
         
         builder.Property(p => p.StockMin)
-        .IsRequired().HasColumnType("short");
+        .HasColumnType("int");
 
         builder.Property(p => p.StockMax)
-        .IsRequired().HasColumnType("short");
+        .HasColumnType("int");
+
+        builder.Property(p => p.CodProducto).HasMaxLength(10);
 
         builder.HasOne(p => p.Productos)
         .WithMany(p => p.Inventarios)

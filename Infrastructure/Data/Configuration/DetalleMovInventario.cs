@@ -16,16 +16,14 @@ public class DetalleMovInventarioConfiguration : IEntityTypeConfiguration<Detall
 
         builder.HasKey(e => e.IdInventario);
         builder.Property(e => e.IdInventario)
-        .IsRequired()
         .HasMaxLength(10);
 
         builder.HasKey(e => e.IdMovInv);
         builder.Property(e => e.IdMovInv)
-        .IsRequired()
         .HasMaxLength(10);
 
         builder.Property(p => p.Cantidad)
-        .IsRequired().HasColumnType("short");
+        .IsRequired().HasColumnType("int");
         
         builder.Property(p => p.Precio)
         .IsRequired().HasColumnType("double");

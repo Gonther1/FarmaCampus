@@ -13,55 +13,54 @@ public class UbicacionPersonaConfiguration : IEntityTypeConfiguration<UbicacionP
     public void Configure(EntityTypeBuilder<UbicacionPersona> builder)
     {
         builder.ToTable("ubicacionpersona");
-        
-        builder.Property(p => p.IdDireccion)
-        .IsRequired().HasColumnType("int");
+        builder.HasKey(p => p.Id);
+        builder.Property(p => p.Id);
 
+        builder.Property(p => p.TipoDeVia)
+        .IsRequired()
+        .HasMaxLength(50);
+        
         builder.Property(p => p.NumeroPri)
         .IsRequired()
-        .HasColumnType("short");
+        .HasColumnType("int");
 
         builder.Property(p => p.NumeroSec)
         .IsRequired()
-        .HasColumnType("short");
+        .HasColumnType("int");
 
         builder.Property(p => p.NumeroTer)
         .IsRequired()
-        .HasColumnType("short");
+        .HasColumnType("int");
 
         builder.Property(p => p.LetraPri)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(2);
 
         builder.Property(p => p.LetraSec)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(2);
 
         builder.Property(p => p.LetraTer)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(2);
 
         builder.Property(p => p.CardinalPri)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(10);
 
         builder.Property(p => p.CardinalSec)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(10);
 
         builder.Property(p => p.Bis)
         .IsRequired()
-        .HasColumnType("char")
         .HasMaxLength(10);
 
         builder.Property(p => p.Complemento)
         .IsRequired()
         .HasMaxLength(50);
+
+        builder.Property(p => p.IdPersona).HasMaxLength(20);
 
         builder.HasOne(p => p.Personas)
         .WithMany(p => p.UbicacionesPersonas)

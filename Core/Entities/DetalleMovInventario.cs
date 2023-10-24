@@ -7,7 +7,7 @@ namespace Core.Entities;
 
 public class DetalleMovInventario 
 {
-    public short Cantidad { get; set; }
+    public int Cantidad { get; set; }
     public double Precio { get; set; }
     public string IdInventario { get; set; }
     public Inventario Inventarios { get; set; }
