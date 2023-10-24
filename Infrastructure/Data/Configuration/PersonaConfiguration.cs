@@ -16,7 +16,6 @@ public class PersonaConfiguration : IEntityTypeConfiguration<Persona>
         builder.HasKey(e => e.Id);
 
         builder.Property(e => e.Id)
-        .IsRequired()
         .HasMaxLength(20);
 
         builder.Property(e => e.Nombre)

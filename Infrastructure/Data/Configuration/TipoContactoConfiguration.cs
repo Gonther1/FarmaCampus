@@ -20,6 +20,5 @@ public class TipoContactoConfiguration
         builder.Property(p => p.Nombre)
         .IsRequired()
         .HasMaxLength(50);
-        
     }
 }

@@ -15,6 +15,8 @@ public class ContactoPersonaConfiguration : IEntityTypeConfiguration<ContactoPer
         builder.ToTable("contactopersona");
         builder.HasKey(e => e.Id);
         builder.Property(e => e.Id);
+
+        builder.Property(p => p.IdPersona).HasMaxLength(20);
         
         builder.HasOne(p => p.Personas)
         .WithMany(p => p.ContactosPersonas)

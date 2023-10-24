@@ -32,7 +32,8 @@ public class FarmaCampusContext : DbContext
     public DbSet<TipoDocumento> TiposDocumentos { get; set; }
     public DbSet<TipoMovInventario> TiposMovInventarios { get; set; }
     public DbSet<UbicacionPersona> UbicacionesPersonas { get; set; }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)		
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
