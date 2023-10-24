@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<FarmaCampusContext> (options =>{
-    string ? connectionString = builder.Configuration.GetConnectionString("MySqlConnect");
+    string connectionString = builder.Configuration.GetConnectionString("MySqlConnect");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
