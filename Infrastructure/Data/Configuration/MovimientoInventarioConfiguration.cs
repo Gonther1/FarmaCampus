@@ -14,7 +14,8 @@ public class MovimientoInventarioConfiguration : IEntityTypeConfiguration<Movimi
     {
         builder.ToTable("movimientoinventario");
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id);
+        builder.Property(e => e.Id)
+        .HasMaxLength(10);
 
         builder.Property(p => p.FechaMovimiento)
         .IsRequired().HasColumnType("datetime");
@@ -30,11 +31,15 @@ public class MovimientoInventarioConfiguration : IEntityTypeConfiguration<Movimi
         .WithMany(p => p.MovimientosInventarios)
         .HasForeignKey(p => p.IdFormaPago);
 
-        builder.HasOne(p => p.PersonasRespon)
+        builder.Property(p => p.IdResponsable).HasMaxLength(20);
+
+        builder.Property(p => p.IdReceptor).HasMaxLength(20);
+
+        builder.HasOne(p => p.Personas)
         .WithMany(p => p.MovimientosInventarios)
         .HasForeignKey(p => p.IdResponsable);
 
-        builder.HasOne(p => p.PersonasRecep)
+        builder.HasOne(p => p.Personas)
         .WithMany(p => p.MovimientosInventarios)
         .HasForeignKey(p => p.IdReceptor);        
         
