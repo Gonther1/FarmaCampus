@@ -28,6 +28,20 @@ public class FacturaConfiguration : IEntityTypeConfiguration<Factura>
         builder.Property(p => p.NroResolucion)
         .IsRequired()
         .HasMaxLength(10);
+
+        builder.Property(p => p.IdDetalleMovimiento)
+        .HasMaxLength(20);
+
+        builder.Property(p => p.IdPersona)
+        .HasMaxLength(20);
+
+        builder.HasOne(p => p.Personas)
+        .WithMany(p => p.Facturas)
+        .HasForeignKey(p => p.IdPersona);
+
+        builder.HasOne(p => p.DetallesMovInventarios)
+        .WithMany(p => p.Facturas)
+        .HasForeignKey(p => p.IdDetalleMovimiento);
         
     }
 }

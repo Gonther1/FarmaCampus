@@ -11,4 +11,9 @@ public class Factura : BaseEntityInt
     public int FacturaFinal { get; set; }
     public int FacturaActual { get; set; }
     public string NroResolucion { get; set; }
+    public string IdPersona { get; set; }
+    public Persona Personas { get; set; }
+    public string IdDetalleMovimiento { get; set; }
+    public DetalleMovInventario DetallesMovInventarios { get; set; }
+
 }

@@ -13,5 +13,6 @@ public class DetalleMovInventario
     public Inventario Inventarios { get; set; }
     public string IdMovInv { get; set; }
     public MovimientoInventario MovimientosInventarios { get; set; }
+    public ICollection<Factura> Facturas { get; set; }
     
 }

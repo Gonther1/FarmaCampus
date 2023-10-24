@@ -93,7 +93,6 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("IdInventario")
-                        .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
 
                     b.Property<double>("Precio")
@@ -121,12 +120,24 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("FacturaInicial")
                         .HasColumnType("int");
 
+                    b.Property<string>("IdDetalleMovimiento")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("IdPersona")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
                     b.Property<string>("NroResolucion")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("varchar(10)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdDetalleMovimiento");
+
+                    b.HasIndex("IdPersona");
 
                     b.ToTable("factura", (string)null);
                 });
@@ -467,7 +478,9 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TipoDeVia")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -532,6 +545,21 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Inventarios");
 
                     b.Navigation("MovimientosInventarios");
+                });
+
+            modelBuilder.Entity("Core.Entities.Factura", b =>
+                {
+                    b.HasOne("Core.Entities.DetalleMovInventario", "DetallesMovInventarios")
+                        .WithMany("Facturas")
+                        .HasForeignKey("IdDetalleMovimiento");
+
+                    b.HasOne("Core.Entities.Persona", "Personas")
+                        .WithMany("Facturas")
+                        .HasForeignKey("IdPersona");
+
+                    b.Navigation("DetallesMovInventarios");
+
+                    b.Navigation("Personas");
                 });
 
             modelBuilder.Entity("Core.Entities.Inventario", b =>
@@ -641,6 +669,11 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Ciudades");
                 });
 
+            modelBuilder.Entity("Core.Entities.DetalleMovInventario", b =>
+                {
+                    b.Navigation("Facturas");
+                });
+
             modelBuilder.Entity("Core.Entities.FormaPago", b =>
                 {
                     b.Navigation("MovimientosInventarios");
@@ -669,6 +702,8 @@ namespace Infrastructure.Data.Migrations
             modelBuilder.Entity("Core.Entities.Persona", b =>
                 {
                     b.Navigation("ContactosPersonas");
+
+                    b.Navigation("Facturas");
 
                     b.Navigation("MovimientosInventarios");
 

@@ -18,4 +18,5 @@ public class Persona : BaseEntityStr
     public ICollection<MovimientoInventario> MovimientosInventarios { get; set; }
     public ICollection<UbicacionPersona> UbicacionesPersonas { get; set; }
     public ICollection<ContactoPersona> ContactosPersonas { get; set; }
+    public ICollection<Factura> Facturas { get; set; }
 }
