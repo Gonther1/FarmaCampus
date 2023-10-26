@@ -51,172 +51,172 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _contactospersonas;
         }
     }
-    /* public CiudadRepository Ciudades
+    
+    public DepartamentoRepository Departamentos
     {
         get 
         {
-            if (_ciudades == null)
+            if (_departamentos == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _departamentos = new DepartamentoRepository(_context);
             }
-            return _ciudades;
+            return _departamentos;
         }
     }
-        public CiudadRepository Ciudades
+    public DetalleMovInventarioRepository DetallesMovInventarios
     {
         get 
         {
-            if (_ciudades == null)
+            if (_detallesmovinventario == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _detallesmovinventario = new DetalleMovInventarioRepository(_context);
             }
-            return _ciudades;
+            return _detallesmovinventario;
         }
     }
-        public CiudadRepository Ciudades
+    public FacturaRepository Facturas
     {
         get 
         {
-            if (_ciudades == null)
+            if (_facturas == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _facturas = new FacturaRepository(_context);
             }
-            return _ciudades;
+            return _facturas;
         }
     }
-        public CiudadRepository Ciudades
+    public FormaPagoRepository FormasPagos
     {
         get 
         {
-            if (_ciudades == null)
+            if (_formaspagos == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _formaspagos = new FormaPagoRepository(_context);
             }
-            return _ciudades;
+            return _formaspagos;
         }
     }
-        public CiudadRepository Ciudades
+    public InventarioRepository Inventarios
     {
         get 
         {
-            if (_ciudades == null)
+            if (_inventarios == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _inventarios = new InventarioRepository(_context);
             }
-            return _ciudades;
+            return _inventarios;
         }
     }
-        public CiudadRepository Ciudades
+    public MarcaRepository Marcas
     {
         get 
         {
-            if (_ciudades == null)
+            if (_marcas == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _marcas = new MarcaRepository(_context);
             }
-            return _ciudades;
+            return _marcas;
         }
     }
-        public CiudadRepository Ciudades
+    public MovimientoInventarioRepository MovimientosInventarios
     {
         get 
         {
-            if (_ciudades == null)
+            if (_movimientosinventarios == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _movimientosinventarios = new MovimientoInventarioRepository(_context);
             }
-            return _ciudades;
+            return _movimientosinventarios;
         }
     }
-        public CiudadRepository Ciudades
+    public PaisRepository Paises
     {
         get 
         {
-            if (_ciudades == null)
+            if (_paises == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _paises = new PaisRepository(_context);
             }
-            return _ciudades;
+            return _paises;
         }
     }
-        public CiudadRepository Ciudades
+    public PersonaRepository Personas
     {
         get 
         {
-            if (_ciudades == null)
+            if (_personas == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _personas = new PersonaRepository(_context);
             }
-            return _ciudades;
+            return _personas;
         }
     }
-        public CiudadRepository Ciudades
+    public PresentacionRepository Presentaciones
     {
         get 
         {
-            if (_ciudades == null)
+            if (_presentaciones == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _presentaciones = new PresentacionRepository(_context);
             }
-            return _ciudades;
+            return _presentaciones;
         }
     }
-        public CiudadRepository Ciudades
+    public ProductoRepository Productos
     {
         get 
         {
-            if (_ciudades == null)
+            if (_productos == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _productos = new ProductoRepository(_context);
             }
-            return _ciudades;
+            return _productos;
         }
     }
-        public CiudadRepository Ciudades
+    public RoPersonaRepository RolesPersonas
     {
         get 
         {
-            if (_ciudades == null)
+            if (_rolespersonas == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _rolespersonas = new RoPersonaRepository(_context);
             }
-            return _ciudades;
+            return _rolespersonas;
         }
     }
-        public CiudadRepository Ciudades
+    public TipoContactoRepository TiposContactos
     {
         get 
         {
-            if (_ciudades == null)
+            if (_tiposcontactos == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _tiposcontactos = new TipoContactoRepository(_context);
             }
-            return _ciudades;
+            return _tiposcontactos;
         }
     }
-        public CiudadRepository Ciudades
+    public TipoDocumentoRepository TiposDocumentos
     {
         get 
         {
-            if (_ciudades == null)
+            if (_tiposdocumentos == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _tiposdocumentos = new TipoDocumentoRepository(_context);
             }
-            return _ciudades;
+            return _tiposdocumentos;
         }
     }
-        public CiudadRepository Ciudades
+    public UbicacionPersonaRepository UbicacionesPersonas
     {
         get 
         {
-            if (_ciudades == null)
+            if (_ubicacionespersonas == null)
             {
-                _ciudades = new CiudadRepository(_context);
+                _ubicacionespersonas = new UbicacionPersonaRepository(_context);
             }
-            return _ciudades;
+            return _ubicacionespersonas;
         }
-    } */
-
+    } 
     public UnitOfWork(FarmaCampusContext context)
     {
         _context = context;
