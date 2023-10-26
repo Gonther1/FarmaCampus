@@ -8,9 +8,9 @@ namespace Core.Interfaces;
 public interface IUnitOfWork
 {
     ICiudadRepository Ciudades { get; }
-    IContactoPersonaRepository Contactos { get; }
+    IContactoPersonaRepository ContactosPersonas { get; }
     IDepartamentoRepository Departamentos { get; }
-    IDetalleMovInventarioRepository DetalleMovInventario { get; }
+    IDetalleMovInventarioRepository DetalleMovInventarios { get; }
     IFacturaRepository Facturas { get; }
     IFormaPagoRepository FormasPagos { get; }
     IInventarioRepository Inventarios { get; }
