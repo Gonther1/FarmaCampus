@@ -28,8 +28,10 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private RoPersonaRepository _rolespersonas;
     private TipoContactoRepository _tiposcontactos;
     private TipoDocumentoRepository _tiposdocumentos;
+    private TipoMovInventarioRepository _tipomovinventario;
+    private TipoPersonaRepository _tipospersonas;
     private UbicacionPersonaRepository _ubicacionespersonas;
-    public CiudadRepository Ciudades
+    public ICiudadRepository Ciudades
     {
         get 
         {
@@ -40,7 +42,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _ciudades;
         }
     }
-    public ContactoPersonaRepository ContactosPersonas
+    public IContactoPersonaRepository ContactosPersonas
     {
         get 
         {
@@ -52,7 +54,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
     
-    public DepartamentoRepository Departamentos
+    public IDepartamentoRepository Departamentos
     {
         get 
         {
@@ -63,7 +65,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _departamentos;
         }
     }
-    public DetalleMovInventarioRepository DetallesMovInventarios
+    public IDetalleMovInventarioRepository DetalleMovInventarios
     {
         get 
         {
@@ -74,7 +76,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _detallesmovinventario;
         }
     }
-    public FacturaRepository Facturas
+    public IFacturaRepository Facturas
     {
         get 
         {
@@ -85,7 +87,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _facturas;
         }
     }
-    public FormaPagoRepository FormasPagos
+    public IFormaPagoRepository FormasPagos
     {
         get 
         {
@@ -96,7 +98,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _formaspagos;
         }
     }
-    public InventarioRepository Inventarios
+    public IInventarioRepository Inventarios
     {
         get 
         {
@@ -107,7 +109,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _inventarios;
         }
     }
-    public MarcaRepository Marcas
+    public IMarcaRepository Marcas
     {
         get 
         {
@@ -118,7 +120,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _marcas;
         }
     }
-    public MovimientoInventarioRepository MovimientosInventarios
+    public IMovimientoInventarioRepository MovimientosInventarios
     {
         get 
         {
@@ -129,7 +131,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _movimientosinventarios;
         }
     }
-    public PaisRepository Paises
+    public IPaisRepository Paises
     {
         get 
         {
@@ -140,7 +142,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _paises;
         }
     }
-    public PersonaRepository Personas
+    public IPersonaRepository Personas
     {
         get 
         {
@@ -151,7 +153,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _personas;
         }
     }
-    public PresentacionRepository Presentaciones
+    public IPresentacionRepository Presentaciones
     {
         get 
         {
@@ -162,7 +164,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _presentaciones;
         }
     }
-    public ProductoRepository Productos
+    public IProductoRepository Productos
     {
         get 
         {
@@ -173,7 +175,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _productos;
         }
     }
-    public RoPersonaRepository RolesPersonas
+    public IRoPersonaRepository Roles
     {
         get 
         {
@@ -184,7 +186,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _rolespersonas;
         }
     }
-    public TipoContactoRepository TiposContactos
+    public ITipoContactoRepository TiposContactos
     {
         get 
         {
@@ -195,7 +197,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _tiposcontactos;
         }
     }
-    public TipoDocumentoRepository TiposDocumentos
+    public ITipoDocumentoRepository TiposDocumentos
     {
         get 
         {
@@ -206,7 +208,30 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _tiposdocumentos;
         }
     }
-    public UbicacionPersonaRepository UbicacionesPersonas
+    public ITipoMovInventarioRepository TiposMovInventarios
+    {
+        get 
+        {
+            if (_tipomovinventario == null)
+            {
+                _tipomovinventario = new TipoMovInventarioRepository(_context);
+            }
+            return _tipomovinventario;
+        }
+    }
+
+    public ITipoPersonaRepository TiposPersonas
+    {
+        get 
+        {
+            if (_tipospersonas == null)
+            {
+                _tipospersonas = new TipoPersonaRepository(_context);
+            }
+            return _tipospersonas;
+        }
+    }
+    public IUbicacionPersonaRepository UbicacionesPersonas
     {
         get 
         {
