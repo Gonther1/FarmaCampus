@@ -16,10 +16,14 @@ public class UbicacionPersonaConfiguration : IEntityTypeConfiguration<UbicacionP
         builder.HasKey(p => p.Id);
         builder.Property(p => p.Id);
 
+        builder.Property(p => p.IdDireccion)
+        .IsRequired()
+        .HasColumnType("int");
+
         builder.Property(p => p.TipoDeVia)
         .IsRequired()
         .HasMaxLength(50);
-        
+
         builder.Property(p => p.NumeroPri)
         .IsRequired()
         .HasColumnType("int");
