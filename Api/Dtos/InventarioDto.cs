@@ -8,6 +8,7 @@ namespace Api.Dtos;
 public class InventarioDto
 {
     public string Id { get; set; }
+    public string Nombre { get; set; }
     public double Precio { get; set; }
     public int Stock { get; set; }
     public int StockMin { get; set; }
