@@ -92,6 +92,9 @@ namespace Infrastructure.Data.Migrations
                     b.Property<int>("Cantidad")
                         .HasColumnType("int");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("IdInventario")
                         .HasColumnType("varchar(10)");
 

@@ -30,6 +30,19 @@ public class CiudadController : BaseController
         var entity = await _unitOfWork.Ciudades.GetAllAsync();
         return _mapper.Map<List<CiudadDto>>(entity);
     }
+    [HttpGet("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<ActionResult<CiudadDto>> Get(int id)
+    {
+        var entity = await _unitOfWork.Ciudades.GetByIdAsync(id);
+        if (entity == null)
+        {
+            return NotFound();
+        }
+        return _mapper.Map<CiudadDto>(entity);
+    }
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -56,20 +69,7 @@ public class CiudadController : BaseController
         }
         entityDto.Id = entity.Id;
         return CreatedAtAction(nameof(Post), new { id = entityDto.Id }, entityDto);
-    }
-    [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<CiudadDto>> Get(int id)
-    {
-        var entity = await _unitOfWork.Ciudades.GetByIdAsync(id);
-        if (entity == null)
-        {
-            return NotFound();
-        }
-        return _mapper.Map<CiudadDto>(entity);
-    }
+    }   
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
